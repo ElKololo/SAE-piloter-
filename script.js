@@ -15,13 +15,24 @@ const questions = [
         
         // Sélection des éléments HTML où injecter le contenu
         const questionDiv = document.getElementById("question");
-        
+        const optionsDiv = document.getElementById("options");
+
         // Injection de l'image + du texte de la question dans le DOM
         questionDiv.innerHTML = `
         <img src="${q.image}" alt="image de la question" width="200">
         <p>${q.question}</p>
         `;
-        }
         
+        //  Création des boutons de réponse
+        optionsDiv.innerHTML = "";  // 
+        q.options.forEach(option => {
+            const btn = document.createElement("button");
+            btn.textContent = option;
+            btn.classList.add("option-btn");
+    
+            optionsDiv.appendChild(btn); 
+        });
+    }
         // Appel de la fonction ici, en dehors
         showQuestion();
+
