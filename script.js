@@ -71,6 +71,9 @@ const questions = [
 
     // Ajouter le bouton suivant à la page
     feedbackDiv.appendChild(nextButton);
+
+    // Attendre 3 secondes avant de passer à la question suivante automatiquement
+    setTimeout(nextQuestion, 2000);
 }
 
 function nextQuestion() {
