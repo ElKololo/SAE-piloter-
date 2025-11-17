@@ -9,6 +9,9 @@ const questions = [
     }
     ];
 
+    // Variable pour stocker le score
+    let score = 0;
+
     function showQuestion() {
         // On récupère la première question du tableau
         const q = questions[0];
@@ -45,10 +48,10 @@ const questions = [
     const feedbackDiv = document.getElementById("feedback");
 
     if (selected === q.correctAnswer) {
-        feedbackDiv.textContent = "Bonne réponse ! 🎉";
+        feedbackDiv.textContent = `Bonne réponse ! 🎉 Score: ${score}`;
         feedbackDiv.style.color = "green";
     } else {
-        feedbackDiv.textContent = "Mauvaise réponse ❌";
+        feedbackDiv.textContent = `Mauvaise réponse ❌ Score: ${score}`;
         feedbackDiv.style.color = "red";
     }
 }
