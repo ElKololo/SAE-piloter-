@@ -8,3 +8,20 @@ const questions = [
     correctAnswer: "Mbappé"
     }
     ];
+
+    function showQuestion() {
+        // On récupère la première question du tableau
+        const q = questions[0];
+        
+        // Sélection des éléments HTML où injecter le contenu
+        const questionDiv = document.getElementById("question");
+        
+        // Injection de l'image + du texte de la question dans le DOM
+        questionDiv.innerHTML = `
+        <img src="${q.image}" alt="image de la question" width="200">
+        <p>${q.question}</p>
+        `;
+        }
+        
+        // Appel de la fonction ici, en dehors
+        showQuestion();
