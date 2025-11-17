@@ -39,6 +39,19 @@ const questions = [
             optionsDiv.appendChild(btn); 
         });
     }
+
+    function checkAnswer(selected) {
+    const q = questions[0];
+    const feedbackDiv = document.getElementById("feedback");
+
+    if (selected === q.correctAnswer) {
+        feedbackDiv.textContent = "Bonne réponse ! 🎉";
+        feedbackDiv.style.color = "green";
+    } else {
+        feedbackDiv.textContent = "Mauvaise réponse ❌";
+        feedbackDiv.style.color = "red";
+    }
+}
         // Appel de la fonction ici, en dehors
         showQuestion();
 
