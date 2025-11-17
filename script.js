@@ -55,6 +55,7 @@ const questions = [
     const feedbackDiv = document.getElementById("feedback");
 
     if (selected === q.correctAnswer) {
+        score++;
         feedbackDiv.textContent = `Bonne réponse ! 🎉 Score: ${score}`;
         feedbackDiv.style.color = "green";
     } else {
