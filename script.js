@@ -16,6 +16,7 @@ const questions = [
         // Sélection des éléments HTML où injecter le contenu
         const questionDiv = document.getElementById("question");
         const optionsDiv = document.getElementById("options");
+        const feedbackDiv = document.getElementById("feedback");
 
         // Injection de l'image + du texte de la question dans le DOM
         questionDiv.innerHTML = `
@@ -29,6 +30,11 @@ const questions = [
             const btn = document.createElement("button");
             btn.textContent = option;
             btn.classList.add("option-btn");
+
+            //  Ajouter l'écouteur de clic
+        btn.addEventListener("click", () => {
+            checkAnswer(option);
+        });
     
             optionsDiv.appendChild(btn); 
         });
