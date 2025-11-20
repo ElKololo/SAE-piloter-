@@ -34,21 +34,24 @@ const questions = [
         <p>${q.question}</p>
         `;
         
-        //  Création des boutons de réponse
-        optionsDiv.innerHTML = "";  // 
-        q.options.forEach(option => {
-            const btn = document.createElement("button");
-            btn.textContent = option;
-            btn.classList.add("option-btn");
-
-            //  Ajouter l'écouteur de clic
-        btn.addEventListener("click", () => {
-            checkAnswer(option);
-        });
-    
-            optionsDiv.appendChild(btn); 
-        });
+       showOptions(q);
+   
     }
+
+    function showOptions(q) {
+const optionsDiv = document.getElementById("options");
+optionsDiv.innerHTML = "";
+
+q.options.forEach(option => {
+const btn = document.createElement("button");
+btn.textContent = option;
+btn.classList.add("option-btn");
+btn.addEventListener("click", () => {
+checkAnswer(option);
+});
+optionsDiv.appendChild(btn);
+});
+}
 
     function checkAnswer(selected) {
     const q = questions[currentQuestionIndex];
@@ -94,40 +97,3 @@ function nextQuestion() {
         // Appel de la fonction ici, en dehors
         showQuestion();
 
-function showQuestion() {
-const q = questions[currentQuestionIndex];
-const questionDiv = document.getElementById("question");
-const optionsDiv = document.getElementById("options");
-const feedbackDiv = document.getElementById("feedback");
-
-questionDiv.innerHTML = `
-<img src="${q.image}" alt="image de la question" width="200">
-<p>${q.question}</p>
-`;
-
-// Création des boutons de réponse
-optionsDiv.innerHTML = "";
-q.options.forEach(option => {
-const btn = document.createElement("button");
-btn.textContent = option;
-btn.classList.add("option-btn");
-btn.addEventListener("click", () => {
-checkAnswer(option);
-});
-optionsDiv.appendChild(btn);
-});
-}       
-function showOptions(q) {
-const optionsDiv = document.getElementById("options");
-optionsDiv.innerHTML = "";
-
-q.options.forEach(option => {
-const btn = document.createElement("button");
-btn.textContent = option;
-btn.classList.add("option-btn");
-btn.addEventListener("click", () => {
-checkAnswer(option);
-});
-optionsDiv.appendChild(btn);
-});
-}
