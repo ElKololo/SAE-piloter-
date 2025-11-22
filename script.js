@@ -91,6 +91,9 @@ const questions = [
 }
 
 function nextQuestion() {
+    const feedbackDiv = document.getElementById("feedback");
+    feedbackDiv.innerHTML = ""; // Effacer le feedback
+
     // Passer à la question suivante
     currentQuestionIndex++;
 
