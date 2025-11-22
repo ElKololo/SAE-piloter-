@@ -39,31 +39,42 @@ const questions = [
     }
 
     function showOptions(q) {
-const optionsDiv = document.getElementById("options");
-optionsDiv.innerHTML = "";
-
-q.options.forEach(option => {
-const btn = document.createElement("button");
-btn.textContent = option;
-btn.classList.add("option-btn");
-btn.addEventListener("click", () => {
-checkAnswer(option);
-});
-optionsDiv.appendChild(btn);
-});
-}
+        const optionsDiv = document.getElementById("options");
+        optionsDiv.innerHTML = "";
+        answerLocked = false; // On réactive les clics pour la nouvelle question
+    
+        q.options.forEach(option => {
+            const btn = document.createElement("button");
+            btn.textContent = option;
+            btn.classList.add("option-btn");
+    
+            btn.addEventListener("click", () => {
+                if (!answerLocked) {
+                    answerLocked = true; // On bloque tous les clics
+                    checkAnswer(option);
+                }
+            });
+    
+            optionsDiv.appendChild(btn);
+        });
+    }
+    
 
     function checkAnswer(selected) {
-    const q = questions[currentQuestionIndex];
-    const feedbackDiv = document.getElementById("feedback");
-
-    if (selected === q.correctAnswer) {
-        score++;
-        feedbackDiv.textContent = `Bonne réponse ! 🎉 Score: ${score}`;
-        feedbackDiv.style.color = "green";
-    } else {
-        feedbackDiv.textContent = `Mauvaise réponse ❌ Score: ${score}`;
-        feedbackDiv.style.color = "red";
+        const q = questions[currentQuestionIndex];
+        const feedbackDiv = document.getElementById("feedback");
+    
+        // Désactivation de tous les boutons
+        const allButtons = document.querySelectorAll(".option-btn");
+        allButtons.forEach(btn => btn.disabled = true);
+    
+        if (selected === q.correctAnswer) {
+            score++;
+            feedbackDiv.textContent = `Bonne réponse ! 🎉 Score: ${score}`;
+            feedbackDiv.style.color = "green";
+        } else {
+            feedbackDiv.textContent = `Mauvaise réponse ❌ Score: ${score}`;
+            feedbackDiv.style.color = "red";
     }
 
     // Afficher le bouton "Suivant"
