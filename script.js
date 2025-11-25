@@ -1,17 +1,46 @@
 // Tâche : Créer un tableau questions contenant un premier objet questionTest
 const questions = [
     {
-    // Tâche : Ajouter les propriétés image, question, options, correctAnswer
-    image: "assets/images/test.jpg",
-    question: "Quel joueur se trouve sur cette image ?",
-    options: ["Mbappé", "Messi", "Ronaldo"],
-    correctAnswer: "Mbappé"
+        image: "mbappe.jpg",
+        question: "Quel joueur se trouve sur cette image ?",
+        options: ["Mbappé", "Messi", "Ronaldo"],
+        correctAnswer: "Mbappé"
     },
     {
-        image: "assets/images/test2.jpg", // Exemple de 2e question
-        question: "Quel est le plus grand pays du monde ?",
-        options: ["Chine", "Russie", "USA"],
-        correctAnswer: "Russie"
+        image: "messi.jpg",
+        question: "Dans quel club Lionel Messi a-t-il passé la majorité de sa carrière ?",
+        options: ["FC Barcelone", "PSG", "Inter Miami"],
+        correctAnswer: "FC Barcelone"
+    },
+    {
+        image: "ronaldo.jpg",
+        question: "Quel est le vrai prénom complet de Cristiano Ronaldo ?",
+        options: ["Cristiano dos Santos Aveiro", "Cristiano Da Silva", "Cristiano Fernandes"],
+        correctAnswer: "Cristiano dos Santos Aveiro"
+    },
+    {
+        image: "neymar.jpg",
+        question: "Quel est le poste principal de Neymar ?",
+        options: ["Défenseur", "Attaquant", "Gardien"],
+        correctAnswer: "Attaquant"
+    },
+    {
+        image: "griezmann.jpg",
+        question: "Quel numéro porte généralement Griezmann en équipe de France ?",
+        options: ["7", "9", "11"],
+        correctAnswer: "7"
+    },
+    {
+        image: "benzema.jpg",
+        question: "Quel trophée Karim Benzema a remporté en 2022 ?",
+        options: ["Ballon d'Or", "The Best Award", "Golden Boy"],
+        correctAnswer: "Ballon d'Or"
+    },
+    {
+        image: "zidane.jpg",
+        question: "En quelle année Zidane a-t-il inscrit son célèbre doublé en finale de C1 avec le Real Madrid ?",
+        options: ["2000", "2002", "2004"],
+        correctAnswer: "2002"
     }
     ];
 
