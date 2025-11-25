@@ -1,4 +1,4 @@
-// Tâche : Créer un tableau questions contenant un premier objet questionTest
+// Tableau des questions
 const questions = [
 {
 image: "mbappe.jpg",
@@ -57,7 +57,9 @@ const feedbackDiv = document.getElementById("feedback");
 // Effacer le feedback précédent
 feedbackDiv.innerHTML = "";
 
+// 🔥 Ajout de l'affichage "Question X / Y"
 questionDiv.innerHTML = `
+<p>Question ${currentQuestionIndex + 1} / ${questions.length}</p>
 <img src="${q.image}" alt="image de la question" width="200">
 <p>${q.question}</p>
 `;
