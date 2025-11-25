@@ -86,7 +86,7 @@ function checkAnswer(selected) {
 const q = questions[currentQuestionIndex];
 const feedbackDiv = document.getElementById("feedback");
 
-// Désactiver les boutons après choix
+// Désactiver les boutons après la réponse
 const allButtons = document.querySelectorAll(".option-btn");
 allButtons.forEach(btn => btn.disabled = true);
 
@@ -99,7 +99,7 @@ feedbackDiv.textContent = `Mauvaise réponse ❌ Score: ${score}`;
 feedbackDiv.style.color = "red";
 }
 
-// ➤ Bouton "Suivant" UNIQUEMENT (plus d'auto-next)
+// Création du bouton "Question suivante"
 const nextButton = document.createElement("button");
 nextButton.textContent = "Question suivante";
 nextButton.classList.add("next-btn");
@@ -117,8 +117,25 @@ currentQuestionIndex++;
 if (currentQuestionIndex < questions.length) {
 showQuestion();
 } else {
-feedbackDiv.textContent = `Quiz terminé ! Votre score final est : ${score}`;
+// Fin du quiz → Affichage du score final + bouton Recommencer
+feedbackDiv.innerHTML = `
+<p>Quiz terminé ! Votre score final est : ${score}</p>
+`;
+
+const restartButton = document.createElement("button");
+restartButton.textContent = "Recommencer le quiz";
+restartButton.classList.add("restart-btn");
+restartButton.addEventListener("click", restartQuiz);
+
+feedbackDiv.appendChild(restartButton);
 }
+}
+
+function restartQuiz() {
+score = 0;
+currentQuestionIndex = 0;
+document.getElementById("feedback").innerHTML = "";
+showQuestion();
 }
 
 // Lancer le quiz
