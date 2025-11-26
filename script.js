@@ -43,19 +43,19 @@ options: ["2000", "2002", "2004"],
 correctAnswer: "2002"
 },
 {
- image: "petit-pont.jpg",
+ image: "petit-pont.jpeg",
  question: "Comment appelle t-on le geste qui consiste à faire passer le ballon entre les jambes de l'adversaire ?",
  options: ["Double contact", "Rainbow flick", "pont d'avignon", "petit pont"],
  correctAnswer: "petit pont"
 },
 {
-    image: "rainbow.jpg",
+    image: "rainbow.jpeg",
     question: "Quel est le nom de ce geste ?",
     options: ["Rainbow", "Elastico", "Panenka"],
     correctAnswer: "Rainbow"
 },
 {
-    image: "sansiro.jpg",
+    image: "sansiro.jpeg",
     question: "Quelle est le nom de ce stade mythique ?",
     options: ["Camp nou", "Santiago Bernabeu", "Old trafford", "San Siro"],
     correctAnswer: "San Siro"
